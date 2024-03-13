@@ -1,4 +1,5 @@
 # Unreleased
+- Updated raw-window-handle dependency to 0.6. See [raw-window-handle CHANGELOG](https://github.com/rust-windowing/raw-window-handle/blob/v0.6.0/CHANGELOG.md#060-2023-09-30) for more info.
 
 # Version 0.31.3
 

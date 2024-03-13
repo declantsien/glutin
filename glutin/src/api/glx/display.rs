@@ -45,11 +45,11 @@ impl Display {
         // Don't load GLX when unsupported platform was requested.
         let (display, screen) = match display {
             RawDisplayHandle::Xlib(handle) => {
-                if handle.display.is_null() {
+                if handle.display.is_none() {
                     return Err(ErrorKind::BadDisplay.into());
                 }
 
-                (GlxDisplay(handle.display as *mut _), handle.screen as i32)
+                (GlxDisplay(handle.display.unwrap().as_ptr() as *mut _), handle.screen as i32)
             },
             _ => {
                 return Err(
